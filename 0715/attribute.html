@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            const attr = document.getElementById("attribute");
+            attr.setAttribute("price",10000);//속성설정,변경
+            constnum = attr.getAttribute("num");//속성 읽기
+            console.log("num");
+            console.log(attr);
+            attr.removeAttribute("num");//속성 제거
+
+            //아이디 속성 접근
+            console.log("id",attr.id);
+            
+            //클래스 속성 접근
+            console.log("class",attr.className);
+            attr.className = attr.className+ "class5";
+
+            //class2 remove
+            let className = attr.className.split("");
+            for(let i =0; i<className.length; i++){
+                if(className[i] == 'class2'){
+                    className.splice(i,1);
+                }
+            }
+            className = className.join("");
+            attr.classNameclassName;
+            console.log(className);
+
+            //name속성 접근
+            console.log("name",attr.name);
+
+            //클래스 관리 객체.classList
+            const classList = attr.classList;
+            classList.remove("class2");//class2제거
+            classList.add("class4");//class4추가
+            classList.toggle("class2");//class2없으니까추가
+            if(classList.contains("class4")){
+                console.log("class4가 존재");
+            } else {
+                console.log("class4가 미존재");
+            }
+
+            // data-num, data-price 속성 접근
+            constdataNum= attr.getAttribute("data-num");
+            constdataprico= attr.getAttribute('data-price');
+            console.log('dataNum',dataNum);
+            conssole.loge('dataproce',dataprice);
+
+            console.log(attr);
+        };
+    </script>
+</head>
+<body>
+    <div id='attribute' class='class1 class2 class3' data-num='20' data-price='10000'>속성테스트</div>
+</body>
+</html>

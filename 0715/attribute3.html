@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            const memNm = document.getElementById("memNm");
+            // data-속성명 --요소.dataset
+            const dataSet = memNm.dataset;
+            console.log("price",dataSet.price);
+            console.log("num",dataSet.num);
+
+            
+            dataSet.consumer = 20000;
+
+            delete dataSet.price;
+        }
+    </script>
+</head>
+<body>
+    <input type='text' name='memNm' id='memNm' data-price='10000' data-num='10'>
+</body>
+</html>
